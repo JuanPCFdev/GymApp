@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:gym_app/pages/intro.dart';
 void main() {
-  runApp(const MainApp());
+  runApp(const MaterialApp(
+    title: 'Gym App',
+    home: MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -9,11 +12,26 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Gym App'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Intro()),
+                );
+              },
+              child: const Text('Start'),
+            ),
+            Image.asset('assets/images/heroimg.jpg'),
+          ],
+        )
       ),
     );
   }
