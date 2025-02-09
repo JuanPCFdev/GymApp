@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/pages/intro.dart';
+import 'package:gym_app/ui/screens/intro.dart';
+
 void main() {
   runApp(const MaterialApp(
     title: 'Gym App',
@@ -18,21 +19,20 @@ class MainApp extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Intro()),
-                );
-              },
-              child: const Text('Start'),
-            ),
-            Image.asset('assets/images/heroimg.jpg'),
-          ],
-        )
-      ),
+          child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Intro()),
+              );
+            },
+            child: const Text('Start'),
+          ),
+          Image.asset('assets/images/heroimg.jpg'),
+        ],
+      )),
     );
   }
 }
