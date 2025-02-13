@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CustomTextLink extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final TextAlign alignment;
 
   const CustomTextLink({
     super.key,
     required this.text,
     required this.onTap,
+    this.alignment = TextAlign.center,
   });
 
   @override
@@ -21,7 +23,7 @@ class CustomTextLink extends StatelessWidget {
           child: Text(
             text,
             maxLines: 2,
-            textAlign: TextAlign.left,
+            textAlign: alignment,
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
