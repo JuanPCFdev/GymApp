@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/ui/screens/intro.dart';
+import 'package:gym_app/ui/screens/user_screens/form_user_screen.dart';
+import 'package:gym_app/ui/screens/user_screens/register_user_screen.dart';
 import 'package:gym_app/ui/widgets/buttons/custom_buttons.dart';
+import 'package:gym_app/ui/widgets/text_fields/custom_date_textfield.dart';
 import 'package:gym_app/ui/widgets/text_fields/custom_textfield.dart';
 import 'package:gym_app/ui/widgets/texts/custom_text.dart';
 import 'package:gym_app/ui/widgets/texts/custom_text_link.dart';
@@ -32,7 +35,7 @@ class MainApp extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Intro()),
+                  MaterialPageRoute(builder: (context) => RegisterUseScreen()),
                 );
               },
               child: const Text('Start'),
@@ -40,7 +43,12 @@ class MainApp extends StatelessWidget {
             Image.asset('assets/images/heroimg.jpg'),
             BlackButton(
               text: "Press Me!",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FormUserScreen()),
+                );
+              },
             ),
             CustomTextfield(placeholder: "Hola Carebola"),
             CustomTitle(text: "Restablecer \nContraseña"),
@@ -53,7 +61,8 @@ class MainApp extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Intro()),
                 );
               },
-            )
+            ),
+            CustomDateTextfield()
           ],
         )),
       ),
