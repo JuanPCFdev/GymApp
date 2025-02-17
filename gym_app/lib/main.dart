@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/ui/screens/intro.dart';
+import 'package:gym_app/ui/screens/home_screens/home_screen.dart';
 import 'package:gym_app/ui/screens/user_screens/form_user_screen.dart';
 import 'package:gym_app/ui/screens/user_screens/register_user_screen.dart';
 import 'package:gym_app/ui/widgets/buttons/custom_buttons.dart';
@@ -10,11 +10,13 @@ import 'package:gym_app/ui/widgets/texts/custom_text_link.dart';
 import 'package:gym_app/ui/widgets/texts/custom_title.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Gym App',
-    debugShowCheckedModeBanner: false,
-    home: MainApp(),
-  ));
+  runApp(
+    const MaterialApp(
+      title: 'Gym App',
+      debugShowCheckedModeBanner: false,
+      home: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -58,7 +60,7 @@ class MainApp extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Intro()),
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
               },
             ),
